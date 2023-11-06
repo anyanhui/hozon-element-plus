@@ -18,19 +18,19 @@ $colors: map.deep-merge(
     'white': #ffffff,
     'black': #000000,
     'primary': (
-      'base': #409eff,
+      'base': #6A8FE6,
     ),
     'success': (
-      'base': #67c23a,
+      'base': #2DA641,
     ),
     'warning': (
-      'base': #e6a23c,
+      'base': #ED6A0C,
     ),
     'danger': (
-      'base': #f56c6c,
+      'base': #D40000,
     ),
     'error': (
-      'base': #f56c6c,
+      'base': #D40000,
     ),
     'info': (
       'base': #909399,
@@ -151,9 +151,9 @@ $border-color-hover: getCssVar('text-color', 'disabled') !default;
 $border-radius: () !default;
 $border-radius: map.merge(
   (
-    'base': 4px,
-    'small': 2px,
-    'round': 20px,
+    'base': 0px,
+    'small': 4px,
+    'round': 32px,
     'circle': 100%,
   ),
   $border-radius
@@ -776,7 +776,7 @@ $table: map.merge(
     'expanded-cell-bg-color': getCssVar('fill-color', 'blank'),
     'fixed-left-column': inset 10px 0 10px -10px rgb(0 0 0 / 15%),
     'fixed-right-column': inset -10px 0 10px -10px rgb(0 0 0 / 15%),
-    'index': getCssVar('index-normal')
+    'index': getCssVar('index-normal'),
   ),
   $table
 );
