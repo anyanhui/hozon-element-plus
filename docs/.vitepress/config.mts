@@ -42,8 +42,9 @@ languages.forEach((lang) => {
 })
 
 export const config: UserConfig = {
-  title: 'Element Plus',
-  description: 'a Vue 3 based component library for designers and developers',
+  title: 'Hozon Element Plus',
+  description:
+    'a Vue 3 based component library for Hozon designers and developers',
   lastUpdated: true,
   head,
   themeConfig: {

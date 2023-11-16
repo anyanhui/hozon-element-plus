@@ -11,16 +11,42 @@
   font-size: getCssVar('font-size', 'base');
 
   @include e(buttons) {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0 30px;
+    // display: inline-block;
+    // vertical-align: middle;
+    // padding: 0 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 16px;
+    .#{$namespace}-button--primary {
+        display: block;
+        padding: 0px;
+        width: 32px;
+        --el-button-text-color: getCssVar('color-white');
+        --el-button-bg-color: getCssVar('color', 'info');
+        --el-button-border-color: getCssVar('color', 'info');
+        --el-button-outline-color: getCssVar('color', 'info', 'light-5');
+        --el-button-active-color: getCssVar('color', 'info', 'dark-2');
+        --el-button-hover-text-color: getCssVar('color-white');
+        --el-button-hover-link-text-color: getCssVar('color', 'info', 'light-5');
+        --el-button-hover-bg-color: getCssVargetCssVar('color', 'info', 'light-3');
+        --el-button-hover-border-color: getCssVargetCssVar('color', 'info', 'light-3');
+        --el-button-active-bg-color: getCssVar('color', 'info', 'dark-2');
+        --el-button-active-border-color: getCssVar('color', 'info', 'dark-2');
+        --el-button-disabled-text-color: getCssVar('color-white');
+        --el-button-disabled-bg-color: getCssVar('color', 'info', 'light-5');
+        --el-button-disabled-border-color: getCssVar('color', 'info', 'light-5');
+        &:nth-child(2) {
+            margin: 0px 0 16px 0;
+        }
+    }
   }
 
   @include e(button) {
     vertical-align: top;
 
     &:nth-child(2) {
-      margin: 0 0 0 10px;
+    //   margin: 0 0 0 10px;
+        margin: 0px 0 16px 0;
     }
 
     i,
@@ -194,7 +220,7 @@
   .#{$namespace}-checkbox__inner {
     height: 14px;
     width: 14px;
-    border-radius: 3px;
+    border-radius: 0px;
     &::after {
       height: 6px;
       width: 3px;

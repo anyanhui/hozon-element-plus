@@ -62,6 +62,7 @@
     height: getCssVar('notification-icon-size');
     width: getCssVar('notification-icon-size');
     font-size: getCssVar('notification-icon-size');
+    top: 5px;
   }
 
   & .#{$namespace}-notification__closeBtn {

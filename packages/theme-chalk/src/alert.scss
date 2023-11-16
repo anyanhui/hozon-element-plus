@@ -93,14 +93,14 @@
     font-size: getCssVar('alert', 'close-font-size');
     opacity: 1;
     position: absolute;
-    top: 12px;
+    top: 20px;
     right: 15px;
     cursor: pointer;
 
     @include when(customed) {
       font-style: normal;
       font-size: getCssVar('alert', 'close-customed-font-size');
-      top: 9px;
+      top: 20px;
     }
   }
 }

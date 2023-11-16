@@ -96,11 +96,11 @@ $color-info: map.get($colors, 'info', 'base') !default;
 $text-color: () !default;
 $text-color: map.merge(
   (
-    'primary': #303133,
-    'regular': #606266,
-    'secondary': #909399,
-    'placeholder': #a8abb2,
-    'disabled': #c0c4cc,
+    'primary': #303544,
+    'regular': rgba(14,19,25,0.8),
+    'secondary': rgba(14,19,25,0.6),
+    'placeholder': rgba(14,19,25,0.4),
+    'disabled': rgba(14,19,25,0.6),
   ),
   $text-color
 );
@@ -137,7 +137,7 @@ $bg-color: () !default;
 $bg-color: map.merge(
   (
     '': #ffffff,
-    'page': #f2f3f5,
+    'page': #ffffff,
     'overlay': #ffffff,
   ),
   $bg-color
@@ -164,19 +164,16 @@ $box-shadow: () !default;
 $box-shadow: map.merge(
   (
     '': (
-      0px 12px 32px 4px rgba(0, 0, 0, 0.04),
-      0px 8px 20px rgba(0, 0, 0, 0.08),
+        0px 0px 8px 0px rgba(14,19,25,0.2),
     ),
     'light': (
-      0px 0px 12px rgba(0, 0, 0, 0.12),
+        0px 0px 12px 0px rgba(14,19,25,0.2),
     ),
     'lighter': (
-      0px 0px 6px rgba(0, 0, 0, 0.12),
+        0px 0px 16px 0px rgba(14,19,25,0.2),
     ),
     'dark': (
-      0px 16px 48px 16px rgba(0, 0, 0, 0.08),
-      0px 12px 32px rgba(0, 0, 0, 0.12),
-      0px 8px 16px -8px rgba(0, 0, 0, 0.16),
+        0px 0px 20px 0px rgba(14,19,25,0.2),
     ),
   ),
   $box-shadow
@@ -187,8 +184,7 @@ $font-family: () !default;
 $font-family: map.merge(
   (
     // default family
-    '':
-      "'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif"
+    '': "'PingFang SC','Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif"
   ),
   $font-family
 );
@@ -196,11 +192,11 @@ $font-family: map.merge(
 $font-size: () !default;
 $font-size: map.merge(
   (
-    'extra-large': 20px,
-    'large': 18px,
+    'extra-large': 24px,
+    'large': 20px,
     'medium': 16px,
     'base': 14px,
-    'small': 13px,
+    'small': 12px,
     'extra-small': 12px,
   ),
   $font-size
@@ -269,9 +265,9 @@ $checkbox: map.merge(
     'font-size': 14px,
     'font-weight': getCssVar('font-weight-primary'),
     'text-color': getCssVar('text-color-regular'),
-    'input-height': 14px,
-    'input-width': 14px,
-    'border-radius': getCssVar('border-radius-small'),
+    'input-height': 16px,
+    'input-width': 16px,
+    'border-radius': getCssVar('border-radius-base'),
     'bg-color': getCssVar('fill-color', 'blank'),
     'input-border': getCssVar('border'),
     'disabled-border-color': getCssVar('border-color'),
@@ -280,7 +276,7 @@ $checkbox: map.merge(
     'disabled-checked-input-fill': getCssVar('border-color-extra-light'),
     'disabled-checked-input-border-color': getCssVar('border-color'),
     'disabled-checked-icon-color': getCssVar('text-color-placeholder'),
-    'checked-text-color': getCssVar('color-primary'),
+    'checked-text-color': getCssVar('text-color-regular'),
     'checked-input-border-color': getCssVar('color-primary'),
     'checked-bg-color': getCssVar('color-primary'),
     'checked-icon-color': getCssVar('color', 'white'),
@@ -327,8 +323,8 @@ $radio: map.merge(
     'font-size': getCssVar('font-size-base'),
     'text-color': getCssVar('text-color-regular'),
     'font-weight': getCssVar('font-weight-primary'),
-    'input-height': 14px,
-    'input-width': 14px,
+    'input-height': 16px,
+    'input-width': 16px,
     'input-border-radius': getCssVar('border-radius-circle'),
     'input-bg-color': getCssVar('fill-color', 'blank'),
     'input-border': getCssVar('border'),
@@ -359,8 +355,8 @@ $radio-disabled: map.merge(
     'input-fill': getCssVar('disabled-bg-color'),
     'icon-color': getCssVar('disabled-bg-color'),
     'checked-input-border-color': getCssVar('disabled-border-color'),
-    'checked-input-fill': getCssVar('disabled-bg-color'),
-    'checked-icon-color': getCssVar('text-color-placeholder'),
+    'checked-input-fill': getCssVar('bg-color'),
+    'checked-icon-color': getCssVar('color-primary'),
   ),
   $radio-disabled
 );
@@ -368,7 +364,7 @@ $radio-disabled: map.merge(
 $radio-checked: () !default;
 $radio-checked: map.merge(
   (
-    'text-color': getCssVar('color-primary'),
+    'text-color': getCssVar('text-color-regular'),
     'input-border-color': getCssVar('color-primary'),
     'icon-color': getCssVar('color-primary'),
   ),
@@ -440,7 +436,7 @@ $select-dropdown: map.merge(
     'shadow': getCssVar('box-shadow-light'),
     'empty-color': getCssVar('text-color-secondary'),
     'max-height': 274px,
-    'padding': 6px 0,
+    'padding': 0 0,
     'empty-padding': 10px 0,
     'border': 1px solid getCssVar('border-color-light'),
   ),
@@ -462,7 +458,7 @@ $select-tags-prefix-padding: map.merge(
 $alert: () !default;
 $alert: map.merge(
   (
-    'padding': 8px 16px,
+    'padding': 14px 20px,
     'border-radius-base': getCssVar('border-radius-base'),
     'title-font-size': 13px,
     'description-font-size': 12px,
@@ -481,7 +477,7 @@ $messagebox: map.merge(
   (
     'title-color': getCssVar('text-color-primary'),
     'width': 420px,
-    'border-radius': 4px,
+    'border-radius': getCssVar('border-radius-base'),
     'font-size': getCssVar('font-size-large'),
     'content-font-size': getCssVar('font-size-base'),
     'content-color': getCssVar('text-color-regular'),
@@ -512,11 +508,11 @@ $notification: () !default;
 $notification: map.merge(
   (
     'width': 330px,
-    'padding': 14px 26px 14px 13px,
-    'radius': 8px,
+    'padding': 20px 36px 20px 20px,
+    'radius': getCssVar('border-radius-base'),
     'shadow': getCssVar('box-shadow-light'),
-    'border-color': getCssVar('border-color-lighter'),
-    'icon-size': 24px,
+    'border-color': transparent,
+    'icon-size': getCssVar('font-size'),
     'close-font-size':
       var(
         #{getCssVarName('message-close-size')},
@@ -526,7 +522,7 @@ $notification: map.merge(
     'group-margin-right': 8px,
     'content-font-size': getCssVar('font-size-base'),
     'content-color': getCssVar('text-color-regular'),
-    'title-font-size': 16px,
+    'title-font-size': getCssVar('font-size'),
     'title-color': getCssVar('text-color-primary'),
     'close-color': getCssVar('text-color-secondary'),
     'close-hover-color': getCssVar('text-color-regular'),
@@ -657,7 +653,7 @@ $button: map.merge(
     'active-border-color': getCssVar('color-primary'),
     'active-bg-color': getCssVar('button', 'hover-bg-color'),
     'outline-color': getCssVar('color-primary', 'light-5'),
-    'hover-link-text-color': getCssVar('color-info'),
+    'hover-link-text-color': getCssVar('color-primary'),
     'active-color': getCssVar('text-color', 'primary'),
   ),
   $button
@@ -749,11 +745,11 @@ $dialog: map.merge(
     'margin-top': 15vh,
     'bg-color': getCssVar('bg-color'),
     'box-shadow': getCssVar('box-shadow'),
-    'title-font-size': getCssVar('font-size-large'),
-    'content-font-size': 14px,
+    'title-font-size': getCssVar('font-size-medium'),
+    'content-font-size': getCssVar('font-size-base'),
     'font-line-height': getCssVar('font-line-height-primary'),
-    'padding-primary': 20px,
-    'border-radius': getCssVar('border-radius-small'),
+    'padding-primary': 15px,
+    'border-radius': getCssVar('border-radius-base'),
   ),
   $dialog
 );
@@ -769,7 +765,7 @@ $table: map.merge(
     'header-text-color': getCssVar('text-color-secondary'),
     'row-hover-bg-color': getCssVar('fill-color', 'light'),
     'current-row-bg-color': getCssVar('color-primary-light-9'),
-    'header-bg-color': getCssVar('bg-color'),
+    'header-bg-color': getCssVar('fill-color'),
     'fixed-box-shadow': getCssVar('box-shadow', 'light'),
     'bg-color': getCssVar('fill-color', 'blank'),
     'tr-bg-color': getCssVar('bg-color'),
@@ -819,13 +815,16 @@ $pagination: map.merge(
     'font-size': 14px,
     'bg-color': getCssVar('fill-color', 'blank'),
     'text-color': getCssVar('text-color-primary'),
-    'border-radius': 2px,
+    'border-radius': getCssVar('border-radius-base'),
+    'border-color': getCssVar('border-color-light'),
     'button-color': getCssVar('text-color-primary'),
     'button-width': 32px,
     'button-height': 32px,
     'button-disabled-color': getCssVar('text-color-placeholder'),
     'button-disabled-bg-color': getCssVar('fill-color', 'blank'),
     'button-bg-color': getCssVar('fill-color'),
+    'button-active-bg-color': getCssVar('color-primary'),
+    'button-active-text-color': getCssVar('color-white'),
     'hover-color': getCssVar('color-primary'),
     'font-size-small': 12px,
     'button-width-small': 24px,
@@ -840,8 +839,8 @@ $pagination: map.merge(
 $popup: () !default;
 $popup: map.merge(
   (
-    'modal-bg-color': getCssVar('color-black'),
-    'modal-opacity': 0.5,
+    'modal-bg-color': getCssVar('color-white'),
+    'modal-opacity': 1,
   ),
   $popup
 );
@@ -858,7 +857,7 @@ $popover: map.merge(
     'padding-large': 18px 20px,
     'title-font-size': 16px,
     'title-text-color': getCssVar('text-color-primary'),
-    'border-radius': 4px,
+    'border-radius': getCssVar('border-radius-base'),
   ),
   $popover
 );
@@ -868,7 +867,7 @@ $popover: map.merge(
 $popper: () !default;
 $popper: map.merge(
   (
-    'border-radius': var(#{getCssVarName('popover-border-radius')}, 4px),
+    'border-radius': var(#{getCssVarName('popover-border-radius')}, 0px),
   ),
   $popper
 );
@@ -888,8 +887,8 @@ $skeleton: map.merge(
 $tag: () !default;
 $tag: map.merge(
   (
-    'font-size': 12px,
-    'border-radius': 4px,
+    'font-size': getCssVar('font-size-base'),
+    'border-radius': getCssVar('border-radius-base'),
     'border-radius-rounded': 9999px,
   ),
   $tag
@@ -899,7 +898,7 @@ $tag-height: () !default;
 $tag-height: map.merge(
   (
     'large': 32px,
-    'default': 24px,
+    'default': 28px,
     'small': 20px,
   ),
   $tag-height
@@ -988,7 +987,7 @@ $badge: () !default;
 $badge: map.merge(
   (
     'bg-color': getCssVar('color-danger'),
-    'radius': 10px,
+    'radius': 0px,
     'font-size': 12px,
     'padding': 6px,
     'size': 18px,
@@ -1001,7 +1000,7 @@ $card: () !default;
 $card: map.merge(
   (
     'border-color': getCssVar('border-color', 'light'),
-    'border-radius': 4px,
+    'border-radius': getCssVar('border-radius-base'),
     'padding': 20px,
     'bg-color': getCssVar('fill-color', 'blank'),
   ),
@@ -1017,7 +1016,7 @@ $slider: map.merge(
     'runway-bg-color': getCssVar('border-color-light'),
     'stop-bg-color': getCssVar('color-white'),
     'disabled-color': getCssVar('text-color-placeholder'),
-    'border-radius': 3px,
+    'border-radius': getCssVar('border-radius-base'),
     'height': 6px,
     'button-size': 20px,
     'button-wrapper-size': 36px,
@@ -1031,11 +1030,11 @@ $slider: map.merge(
 $menu: () !default;
 $menu: map.merge(
   (
-    'active-color': getCssVar('color-primary'),
+    'active-color': getCssVar('color-white'),
     'text-color': getCssVar('text-color-primary'),
-    'hover-text-color': getCssVar('color-primary'),
+    'hover-text-color': getCssVar('color-white'),
     'bg-color': getCssVar('fill-color', 'blank'),
-    'hover-bg-color': getCssVar('color-primary-light-9'),
+    'hover-bg-color': getCssVar('color-primary'),
     'item-height': 56px,
     'sub-item-height': calc(#{getCssVar('menu-item-height')} - 6px),
     'horizontal-height': 60px,
@@ -1043,9 +1042,9 @@ $menu: map.merge(
     'item-font-size': getCssVar('font-size-base'),
     'item-hover-fill': getCssVar('color-primary-light-9'),
     'border-color': getCssVar('border-color'),
-    'base-level-padding': 20px,
-    'level-padding': 20px,
-    'icon-width': 24px,
+    'base-level-padding': 10px,
+    'level-padding': 24px,
+    'icon-width': 18px,
   ),
   $menu
 );
@@ -1192,7 +1191,7 @@ $timeline: map.merge(
 $tabs: () !default;
 $tabs: map.merge(
   (
-    'header-height': 40px,
+    'header-height': 32px,
   ),
   $tabs
 );
@@ -1279,9 +1278,11 @@ $avatar: map.merge(
 $avatar-size: () !default;
 $avatar-size: map.merge(
   (
-    'large': 56px,
+    'xxlarge': 96px,
+    'xlarge': 80px,
+    'large': 48px,
     'default': 40px,
-    'small': 24px,
+    'small': 32px,
   ),
   $avatar-size
 );
@@ -1443,3 +1444,7 @@ $breakpoints-spec: (
   'lg-and-down': '(max-width: #{$xl - 1})',
   'xl-only': '(min-width: #{$xl})',
 ) !default;
+
+:root {
+    --neta-bg-color: #f5f5f5;
+}

@@ -14,11 +14,12 @@
   color: getCssVar('pagination-button-color');
   background: getCssVar('pagination-bg-color');
   padding: 0 4px;
-  border: none;
+  border: 1px solid getCssVar('pagination-border-color');
   border-radius: getCssVar('pagination-border-radius');
   cursor: pointer;
   text-align: center;
   box-sizing: border-box;
+  margin: 0 4px;
 
   * {
     pointer-events: none;
@@ -33,9 +34,10 @@
   }
 
   &.is-active {
-    color: getCssVar('pagination-hover-color');
+    color: getCssVar('pagination-button-active-text-color');
     cursor: default;
     font-weight: bold;
+    background: getCssVar('pagination-button-active-bg-color');
 
     &.is-disabled {
       font-weight: bold;

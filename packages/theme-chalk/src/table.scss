@@ -340,9 +340,10 @@
               bottom: -1px;
               overflow-x: hidden;
               overflow-y: hidden;
-              box-shadow: none;
+            //   box-shadow: none;
               touch-action: none;
               pointer-events: none;
+              box-shadow: getCssVar('table-fixed-left-column');
             }
           }
           &.is-first-column {
@@ -462,12 +463,21 @@
   }
 
   @include when(scrolling-none) {
-    .#{$namespace}-table-fixed-column--left,
+    .#{$namespace}-table-fixed-column--left{
+        &.is-first-column,
+        &.is-last-column {
+          &::before {
+          //   box-shadow: none;
+              box-shadow: getCssVar('table-fixed-left-column');
+          }
+        }
+    }
     .#{$namespace}-table-fixed-column--right {
       &.is-first-column,
       &.is-last-column {
         &::before {
-          box-shadow: none;
+        //   box-shadow: none;
+            box-shadow: getCssVar('table-fixed-right-column');
         }
       }
     }

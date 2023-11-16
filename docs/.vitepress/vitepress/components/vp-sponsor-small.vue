@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { isDark } from '../composables/dark'
 import { leftLogoSponsors } from '../../config/sponsors'
-import { sendEvent } from '../../config/analytics'
+// import { sendEvent } from '../../config/analytics'
 const onItemClick = (item: any) => {
-  sendEvent('sp_click', item.name, 'left_small_img')
+  //   sendEvent('sp_click', item.name, 'left_small_img')
 }
 </script>
 

@@ -110,6 +110,8 @@ $radio-font-size: map.merge(
 
           &::after {
             background-color: map.get($radio-disabled, 'checked-icon-color');
+            width: 6px;
+            height: 6px;
           }
         }
       }

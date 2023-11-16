@@ -15,7 +15,8 @@
   transition: getCssVar('transition-duration');
 
   @include when(always-shadow) {
-    box-shadow: getCssVar('box-shadow', 'light');
+    // box-shadow: getCssVar('box-shadow', 'light');
+    box-shadow: none;
   }
 
   @include when(hover-shadow) {

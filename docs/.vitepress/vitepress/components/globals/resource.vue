@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { isClient } from '@vueuse/core'
 import { useLang } from '../../composables/lang'
 import resourceLocale from '../../../i18n/pages/resource.json'
-import { sendEvent } from '../../../config/analytics'
+// import { sendEvent } from '../../../config/analytics'
 const mirrorUrl = 'element-plus.gitee.io'
 const isMirrorUrl = () => {
   if (!isClient) return
@@ -27,7 +27,7 @@ const resourceUrl = {
 const lang = useLang()
 const resourceLang = computed(() => resourceLocale[lang.value])
 const onClick = (item: string) => {
-  sendEvent('resource_download', item)
+  //   sendEvent('resource_download', item)
 }
 </script>
 

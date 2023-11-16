@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { leftCustomImgSponsors } from '../../config/sponsors'
-import { sendEvent } from '../../config/analytics'
+// import { sendEvent } from '../../config/analytics'
 
 defineProps({
   itemClass: String,
@@ -8,7 +8,7 @@ defineProps({
 })
 
 const onItemClick = (item: any) => {
-  sendEvent('sp_click', item.name, 'left_custom_img')
+  //   sendEvent('sp_click', item.name, 'left_custom_img')
 }
 </script>
 

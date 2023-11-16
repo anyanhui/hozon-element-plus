@@ -215,6 +215,9 @@
     @include when(disabled) {
       cursor: not-allowed;
     }
+    .#{$namespace}-tag {
+        border-color: getCssVar('border-color', 'dark');
+    }
   }
 
   @include e(collapse-tags) {
