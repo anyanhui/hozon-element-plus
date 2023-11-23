@@ -19,6 +19,10 @@
   font-size: 14px;
   color: getCssVar('table-text-color');
 
+  .#{$namespace}-popper {
+    position: absolute !important;
+  }
+
   @include e(inner-wrapper) {
     position: relative;
     display: flex;

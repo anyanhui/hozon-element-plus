@@ -34,19 +34,16 @@ const currentLink = computed(() => {
     <div class="header-container">
       <div class="logo-container">
         <a :href="currentLink">
-          <img
-            class="logo"
-            src="/images/element-plus-logo.svg"
-            alt="Element Plus Logo"
-          />
+          <img class="logo" src="/images/logo.png" alt="Element Plus Logo" />
+          <span>Hozon-Element-Plus</span>
         </a>
       </div>
       <div class="content">
         <VPNavbarSearch class="search" :options="theme.agolia" multilang />
         <VPNavbarMenu class="menu" />
         <VPNavbarThemeToggler class="theme-toggler" />
-        <VPNavbarTranslation class="translation" />
-        <VPNavbarSocialLinks class="social-links" />
+        <!-- <VPNavbarTranslation class="translation" /> -->
+        <!-- <VPNavbarSocialLinks class="social-links" /> -->
         <VPNavbarHamburger
           :active="fullScreen"
           class="hamburger"
@@ -64,7 +61,12 @@ const currentLink = computed(() => {
   height: var(--header-height);
   > a {
     height: 28px;
-    width: 128px;
+    // width: 128px;
+    span {
+      margin-left: 10px;
+      vertical-align: super;
+      color: var(--prism-class);
+    }
   }
   .logo {
     position: relative;

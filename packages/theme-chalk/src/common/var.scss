@@ -690,7 +690,7 @@ $button-font-size: map.merge(
   (
     'large': getCssVar('font-size', 'base'),
     'default': getCssVar('font-size', 'base'),
-    'small': 12px,
+    'small': getCssVar('font-size', 'base'),
   ),
   $button-font-size
 );
@@ -708,9 +708,9 @@ $button-border-radius: map.merge(
 $button-padding-vertical: () !default;
 $button-padding-vertical: map.merge(
   (
-    'large': 13px,
-    'default': 9px,
-    'small': 6px,
+    'large': 11px,
+    'default': 6px,
+    'small': 2px,
   ),
   $button-padding-vertical
 );
@@ -718,9 +718,9 @@ $button-padding-vertical: map.merge(
 $button-padding-horizontal: () !default;
 $button-padding-horizontal: map.merge(
   (
-    'large': 20px,
-    'default': 16px,
-    'small': 12px,
+    'large': 27px,
+    'default': 15px,
+    'small': 9px,
   ),
   $button-padding-horizontal
 );
