@@ -183,12 +183,13 @@
     cursor: text;
     transition: getCssVar('transition-box-shadow');
     transform: translate3d(0, 0, 0);
-    @include inset-input-border(
-      var(
-        #{getCssVarName('input-border-color')},
-        map.get($input, 'border-color')
-      )
-    );
+    // @include inset-input-border(
+    //   var(
+    //     #{getCssVarName('input-border-color')},
+    //     map.get($input, 'border-color')
+    //   )
+    // );
+    border: 1px solid var(--el-input-border-color);
 
     &:hover {
       @include inset-input-border(#{getCssVar('input', 'hover-border-color')});
@@ -315,7 +316,9 @@
 
     .#{$namespace}-input__wrapper {
       background-color: map.get($input-disabled, 'fill');
-      @include mixed-input-border(map.get($input-disabled, 'border'));
+      border-color: getCssVar('disabled-border-color');
+      box-shadow: none;
+    //   @include mixed-input-border(map.get($input-disabled, 'border'));
     }
 
     .#{$namespace}-input__inner {

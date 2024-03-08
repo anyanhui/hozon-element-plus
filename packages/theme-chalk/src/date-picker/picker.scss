@@ -23,12 +23,12 @@
   text-align: left;
 
   &.#{$namespace}-input__wrapper {
-    @include inset-input-border(
-      var(
-        #{getCssVarName('input-border-color')},
-        map.get($input, 'border-color')
-      )
-    );
+    // @include inset-input-border(
+    //   var(
+    //     #{getCssVarName('input-border-color')},
+    //     map.get($input, 'border-color')
+    //   )
+    // );
 
     &:hover {
       @include inset-input-border(#{getCssVar('input', 'hover-border-color')});

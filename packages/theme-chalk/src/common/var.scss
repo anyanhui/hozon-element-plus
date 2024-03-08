@@ -108,12 +108,12 @@ $text-color: map.merge(
 $border-color: () !default;
 $border-color: map.merge(
   (
-    '': #dcdfe6,
-    'light': #e4e7ed,
-    'lighter': #ebeef5,
-    'extra-light': #f2f6fc,
-    'dark': #d4d7de,
-    'darker': #cdd0d6,
+    '': rgba(14,19,25,0.1),
+    'light': rgba(14,19,25,0.1),
+    'lighter': rgba(14,19,25,0.1),
+    'extra-light': rgba(14,19,25,0.1),
+    'dark': rgba(14,19,25,0.2),
+    'darker': rgba(14,19,25,0.2),
   ),
   $border-color
 );
@@ -146,7 +146,7 @@ $bg-color: map.merge(
 // Border
 $border-width: 1px !default;
 $border-style: solid !default;
-$border-color-hover: getCssVar('text-color', 'disabled') !default;
+$border-color-hover: #9cadd7;
 
 $border-radius: () !default;
 $border-radius: map.merge(
@@ -174,6 +174,9 @@ $box-shadow: map.merge(
     ),
     'dark': (
         0px 0px 20px 0px rgba(14,19,25,0.2),
+    ),
+    'input-hover': (
+        0 0 0 2px rgba(51,112,255,0.2),
     ),
   ),
   $box-shadow
@@ -355,6 +358,7 @@ $radio-disabled: map.merge(
     'input-fill': getCssVar('disabled-bg-color'),
     'icon-color': getCssVar('disabled-bg-color'),
     'checked-input-border-color': getCssVar('disabled-border-color'),
+    'checked-disabled-text-color': getCssVar('disabled-text-color'),
     'checked-input-fill': getCssVar('bg-color'),
     'checked-icon-color': getCssVar('color-primary'),
   ),
@@ -1078,8 +1082,8 @@ $datepicker: map.merge(
     'icon-color': getCssVar('text-color-primary'),
     'border-color': getCssVar('disabled-border-color'),
     'inner-border-color': getCssVar('border-color-light'),
-    'inrange-bg-color': getCssVar('border-color-extra-light'),
-    'inrange-hover-bg-color': getCssVar('border-color-extra-light'),
+    'inrange-bg-color': rgba(51,112,255,0.1),
+    'inrange-hover-bg-color': rgba(51,112,255,0.1),
     'active-color': getCssVar('color-primary'),
     'hover-text-color': getCssVar('color-primary'),
   ),
@@ -1170,6 +1174,9 @@ $transfer: map.merge(
     'panel-body-height': 278px,
     'item-height': 30px,
     'filter-height': 32px,
+    'button-disabled-text-color': getCssVar('border-color-darker'),
+    'button-disabled-bg-color': getCssVar('border-color-light'),
+    'button-disabled-border-color': getCssVar('border-color-darker'),
   ),
   $transfer
 );

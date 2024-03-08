@@ -30,26 +30,41 @@
       color: getCssVar('color', 'white');
     //   border-color: getCssVar('text-color', 'primary');
       border: 0 none;
+      @include e(icon) {
+        background: getCssVar('color-primary');
+      }
     }
 
     @include when(wait) {
       color: getCssVar('text-color', 'placeholder');
       border-color: getCssVar('text-color', 'placeholder');
+      @include e(icon) {
+        background: getCssVar('color-white');
+      }
     }
 
     @include when(success) {
-      color: getCssVar('color-success');
-      border-color: getCssVar('color-success');
+      color: getCssVar('color-primary');
+      border-color: getCssVar('color-primary');
+      @include e(icon) {
+        background: getCssVar('color-white');
+      }
     }
 
     @include when(error) {
       color: getCssVar('color-danger');
       border-color: getCssVar('color-danger');
+      @include e(icon) {
+        background: getCssVar('color-white');
+      }
     }
 
     @include when(finish) {
       color: getCssVar('color-primary');
       border-color: getCssVar('color-primary');
+      @include e(icon) {
+        background: getCssVar('color-white');
+      }
     }
   }
 
@@ -63,7 +78,7 @@
     height: 24px;
     font-size: 14px;
     box-sizing: border-box;
-    background: getCssVar('color-primary');
+    // background: getCssVar('color-primary');
     transition: 0.15s ease-out;
 
     @include when(text) {
@@ -132,7 +147,7 @@
     }
 
     @include when(success) {
-      color: getCssVar('color-success');
+      color: getCssVar('color-primary');
     }
 
     @include when(error) {
@@ -160,7 +175,7 @@
     }
 
     @include when(success) {
-      color: getCssVar('color-success');
+      color: getCssVar('color-primary');
     }
 
     @include when(error) {
@@ -218,6 +233,14 @@
   @include when(center) {
     @include e(head) {
       text-align: center;
+      @include e(icon) {
+        background: getCssVar('color-white');
+      }
+      @include when(process) {
+        @include e(icon) {
+            background: getCssVar('color-primary');
+          }
+      }
     }
 
     @include e(main) {

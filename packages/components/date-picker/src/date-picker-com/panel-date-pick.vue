@@ -173,8 +173,8 @@
         {{ t('el.datepicker.now') }}
       </el-button>
       <el-button
-        plain
         size="small"
+        type="primary"
         :class="ppNs.e('link-btn')"
         :disabled="disabledConfirm"
         @click="onConfirm"

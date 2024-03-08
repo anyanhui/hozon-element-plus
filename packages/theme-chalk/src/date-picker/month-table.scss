@@ -43,7 +43,7 @@
       line-height: 36px;
       color: getCssVar('datepicker-text-color');
       margin: 0 auto;
-      border-radius: 18px;
+    //   border-radius: 18px;
       &:hover {
         color: getCssVar('datepicker-hover-text-color');
       }
@@ -66,15 +66,15 @@
       background-color: getCssVar('datepicker-active-color');
     }
 
-    &.start-date div {
-      border-top-left-radius: 24px;
-      border-bottom-left-radius: 24px;
-    }
+    // &.start-date div {
+    //   border-top-left-radius: 24px;
+    //   border-bottom-left-radius: 24px;
+    // }
 
-    &.end-date div {
-      border-top-right-radius: 24px;
-      border-bottom-right-radius: 24px;
-    }
+    // &.end-date div {
+    //   border-top-right-radius: 24px;
+    //   border-bottom-right-radius: 24px;
+    // }
 
     &.current:not(.disabled) .cell {
       color: getCssVar('datepicker-active-color');

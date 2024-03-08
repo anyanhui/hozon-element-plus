@@ -109,7 +109,7 @@ $radio-font-size: map.merge(
           border-color: map.get($radio-disabled, 'checked-input-border-color');
 
           &::after {
-            background-color: map.get($radio-disabled, 'checked-icon-color');
+            background-color: map.get($radio-disabled, 'checked-disabled-text-color');
             width: 6px;
             height: 6px;
           }
@@ -124,7 +124,7 @@ $radio-font-size: map.merge(
     @include when(checked) {
       .#{$namespace}-radio__inner {
         border-color: map.get($radio-checked, 'input-border-color');
-        background: map.get($radio-checked, 'icon-color');
+        // background: map.get($radio-checked, 'icon-color');
 
         &::after {
           transform: translate(-50%, -50%) scale(1);
@@ -158,10 +158,10 @@ $radio-font-size: map.merge(
     }
 
     &::after {
-      width: 4px;
-      height: 4px;
+      width: 6px;
+      height: 6px;
       border-radius: getCssVar('radio-input-border-radius');
-      background-color: getCssVar('color-white');
+      background-color: getCssVar('color-primary');
       content: '';
       position: absolute;
       left: 50%;

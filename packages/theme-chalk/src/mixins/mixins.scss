@@ -230,6 +230,8 @@
   @if $important == true {
     box-shadow: 0 0 0 1px $color inset !important;
   } @else {
-    box-shadow: 0 0 0 1px $color inset;
+    // box-shadow: 0 0 0 1px $color inset;
+    border-color: getCssVar(color-primary);
+    box-shadow: getCssVar('box-shadow-input-hover');
   }
 }

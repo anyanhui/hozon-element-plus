@@ -51,7 +51,7 @@
         @touchstart="onTouchStartInput"
         @click.stop
       >
-        <template #prefix>
+        <!-- <template #prefix>
           <el-icon
             v-if="triggerIcon"
             :class="nsInput.e('icon')"
@@ -60,8 +60,16 @@
           >
             <component :is="triggerIcon" />
           </el-icon>
-        </template>
+        </template> -->
         <template #suffix>
+          <el-icon
+            v-if="!showClose && triggerIcon"
+            :class="nsInput.e('icon')"
+            @mousedown.prevent="onMouseDownInput"
+            @touchstart="onTouchStartInput"
+          >
+            <component :is="triggerIcon" />
+          </el-icon>
           <el-icon
             v-if="showClose && clearIcon"
             :class="`${nsInput.e('icon')} clear-icon`"
@@ -82,14 +90,6 @@
         @touchstart="onTouchStartInput"
         @keydown="handleKeydownInput"
       >
-        <el-icon
-          v-if="triggerIcon"
-          :class="[nsInput.e('icon'), nsRange.e('icon')]"
-          @mousedown.prevent="onMouseDownInput"
-          @touchstart="onTouchStartInput"
-        >
-          <component :is="triggerIcon" />
-        </el-icon>
         <input
           :id="id && id[0]"
           autocomplete="off"
@@ -124,7 +124,15 @@
           @change="handleEndChange"
         />
         <el-icon
-          v-if="clearIcon"
+          v-if="!showClose && triggerIcon"
+          :class="[nsInput.e('icon'), nsRange.e('icon')]"
+          @mousedown.prevent="onMouseDownInput"
+          @touchstart="onTouchStartInput"
+        >
+          <component :is="triggerIcon" />
+        </el-icon>
+        <el-icon
+          v-if="showClose && clearIcon"
           :class="clearIconKls"
           @click="onClearIconClick"
         >
