@@ -5,6 +5,7 @@
         v-model="allChecked"
         :indeterminate="isIndeterminate"
         :validate-event="false"
+        :disabled="isEmpty(data)"
         @change="handleAllCheckedChange"
       >
         {{ title }}

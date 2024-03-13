@@ -101,6 +101,7 @@ $text-color: map.merge(
     'secondary': rgba(14,19,25,0.6),
     'placeholder': rgba(14,19,25,0.4),
     'disabled': rgba(14,19,25,0.6),
+    'white': #F2F4F8,
   ),
   $text-color
 );
@@ -128,6 +129,7 @@ $fill-color: map.merge(
     'dark': #ebedf0,
     'darker': #e6e8eb,
     'blank': #ffffff,
+    'menu-dark': '#0F1011'
   ),
   $fill-color
 );
@@ -1034,16 +1036,16 @@ $slider: map.merge(
 $menu: () !default;
 $menu: map.merge(
   (
-    'active-color': getCssVar('color-white'),
-    'text-color': getCssVar('text-color-primary'),
-    'hover-text-color': getCssVar('color-white'),
-    'bg-color': getCssVar('fill-color', 'blank'),
+    'active-color': getCssVar('text-color-white'),
+    'text-color': getCssVar('text-color-white'),
+    'hover-text-color': getCssVar('text-color-white'),
+    'bg-color': getCssVar('fill-color', 'menu-dark'),
     'hover-bg-color': getCssVar('color-primary'),
-    'item-height': 56px,
+    'item-height': 44px,
     'sub-item-height': calc(#{getCssVar('menu-item-height')} - 6px),
-    'horizontal-height': 60px,
+    'horizontal-height': 44px,
     'horizontal-sub-item-height': 36px,
-    'item-font-size': getCssVar('font-size-base'),
+    'item-font-size': getCssVar('font-size-medium'),
     'item-hover-fill': getCssVar('color-primary-light-9'),
     'border-color': getCssVar('border-color'),
     'base-level-padding': 10px,

@@ -15,13 +15,17 @@
 }
 
 @mixin inset-prepend-input-border($color) {
-  box-shadow: 1px 0 0 0 $color inset, 1px 0 0 0 $color, 0 1px 0 0 $color inset,
-    0 -1px 0 0 $color inset !important;
+//   box-shadow: 1px 0 0 0 $color inset, 1px 0 0 0 $color, 0 1px 0 0 $color inset,
+//     0 -1px 0 0 $color inset !important;
+    border-color: getCssVar('color-primary');
+    box-shadow: getCssVar('box-shadow-input-hover');
 }
 
 @mixin inset-append-input-border($color) {
-  box-shadow: -1px 0 0 0 $color, -1px 0 0 0 $color inset, 0 1px 0 0 $color inset,
-    0 -1px 0 0 $color inset !important;
+//   box-shadow: -1px 0 0 0 $color, -1px 0 0 0 $color inset, 0 1px 0 0 $color inset,
+//     0 -1px 0 0 $color inset !important;
+    border-color: getCssVar('color-primary');
+    box-shadow: getCssVar('box-shadow-input-hover');
 }
 
 @mixin mixed-input-border($color) {
@@ -59,18 +63,19 @@
     );
     background-image: none;
     -webkit-appearance: none;
-    @include inset-input-border(
-      var(
-        #{getCssVarName('input-border-color')},
-        map.get($input, 'border-color')
-      )
-    );
+    // @include inset-input-border(
+    //   var(
+    //     #{getCssVarName('input-border-color')},
+    //     map.get($input, 'border-color')
+    //   )
+    // );
     border-radius: getCssVarWithDefault(
       'input-border-radius',
       map.get($input, 'border-radius')
     );
     transition: getCssVar('transition-box-shadow');
-    border: none;
+    // border: none;
+    border: 1px solid getCssVar('input-border-color');
 
     &::placeholder {
       color: getCssVarWithDefault(
@@ -444,7 +449,10 @@
           .#{$namespace}-input__wrapper {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
-            @include inset-prepend-border(#{getCssVar('input-border-color')});
+            // @include inset-prepend-border(#{getCssVar('input-border-color')});
+            &:hover {
+                box-shadow: none;
+            }
           }
           &.is-focus {
             .#{$namespace}-input__inner {
@@ -494,7 +502,10 @@
           .#{$namespace}-input__wrapper {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
-            @include inset-append-border(#{getCssVar('input-border-color')});
+            // @include inset-append-border(#{getCssVar('input-border-color')});
+            &:hover {
+                box-shadow: none;
+            }
           }
           &.is-focus {
             .#{$namespace}-input__inner {
@@ -514,9 +525,9 @@
           }
           .#{$namespace}-input__wrapper {
             z-index: 1;
-            @include inset-append-input-border(
-              getCssVar('input-hover-border-color')
-            );
+            // @include inset-append-input-border(
+            //   getCssVar('input-hover-border-color')
+            // );
           }
         }
       }

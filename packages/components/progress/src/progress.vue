@@ -85,7 +85,9 @@ import { ElIcon } from '@element-plus/components/icon'
 import {
   Check,
   CircleCheck,
+  CircleCheckFilled,
   CircleClose,
+  CircleCloseFilled,
   Close,
   WarningFilled,
 } from '@element-plus/icons-vue'
@@ -179,9 +181,11 @@ const statusIcon = computed(() => {
     return WarningFilled
   }
   if (props.type === 'line') {
-    return props.status === 'success' ? CircleCheck : CircleClose
+    // return props.status === 'success' ? CircleCheck : CircleClose
+    return props.status === 'success' ? CircleCheckFilled : CircleCloseFilled
   } else {
-    return props.status === 'success' ? Check : Close
+    // return props.status === 'success' ? Check : Close
+    return props.status === 'success' ? CircleCheckFilled : CircleCloseFilled
   }
 })
 
