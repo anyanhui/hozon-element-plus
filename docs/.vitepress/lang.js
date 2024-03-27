@@ -1,9 +1,10 @@
 ;(() => {
   const supportedLangs = window.supportedLangs
   const cacheKey = 'preferred_lang'
-  const defaultLang = 'en-US'
+  const defaultLang = 'zh-CN'
   // docs supported languages
   const langAlias = {
+    zh: 'zh-CN',
     en: 'en-US',
     fr: 'fr-FR',
     es: 'es-ES',

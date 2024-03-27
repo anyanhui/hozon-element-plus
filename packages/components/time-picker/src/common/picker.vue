@@ -289,7 +289,7 @@ const emitInput = (input: SingleOrRange<DateModelType | Dayjs> | null) => {
     } else if (input) {
       formatted = formatter(input, props.valueFormat, lang.value)
     }
-    emit('update:modelValue', input ? formatted : input, lang.value)
+    emit('update:modelValue', input ? formatted : '', lang.value)
   }
 }
 const emitKeydown = (e: KeyboardEvent) => {
@@ -444,17 +444,22 @@ const parsedValue = computed(() => {
       dayOrDays = parseDate(props.modelValue, props.valueFormat, lang.value)!
     }
   }
-
   if (pickerOptions.value.getRangeAvailableTime) {
     const availableResult = pickerOptions.value.getRangeAvailableTime(
       dayOrDays!
     )
     if (!isEqual(availableResult, dayOrDays!)) {
       dayOrDays = availableResult
+      //   emitInput(
+      //     (isArray(dayOrDays)
+      //       ? dayOrDays.map((_) => _.toDate())
+      //       : dayOrDays.toDate()) as SingleOrRange<Date>
+      //   )
+      // 解决Limit the time range清除时间时重新赋值的问题
       emitInput(
         (isArray(dayOrDays)
           ? dayOrDays.map((_) => _.toDate())
-          : dayOrDays.toDate()) as SingleOrRange<Date>
+          : '') as SingleOrRange<Date>
       )
     }
   }

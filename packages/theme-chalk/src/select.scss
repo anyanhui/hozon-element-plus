@@ -83,11 +83,13 @@
     display: inline-block;
   }
 
-//   &:hover:not(.#{$namespace}-select--disabled) {
-//     .#{$namespace}-input__wrapper {
-//       box-shadow: 0 0 0 1px getCssVar('select-border-color-hover') inset;
-//     }
-//   }
+  &:hover:not(.#{$namespace}-select--disabled) {
+    .#{$namespace}-input__wrapper {
+    //   box-shadow: 0 0 0 1px getCssVar('select-border-color-hover') inset;
+        border-color: var(--el-color-primary);
+        box-shadow: var(--el-box-shadow-input-hover);
+    }
+  }
 
   @include select-common(select);
 
@@ -156,12 +158,14 @@
       }
     }
 
-    // &.is-focus .#{$namespace}-input__wrapper {
+    &.is-focus .#{$namespace}-input__wrapper {
     //   @include inset-input-border(
     //     getCssVar('select-input-focus-border-color'),
     //     true
     //   );
-    // }
+        border-color: var(--el-color-primary);
+        box-shadow: var(--el-box-shadow-input-hover);
+    }
   }
 
   @include e(input) {

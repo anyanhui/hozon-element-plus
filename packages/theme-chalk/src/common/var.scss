@@ -1041,11 +1041,11 @@ $menu: map.merge(
     'hover-text-color': getCssVar('text-color-white'),
     'bg-color': getCssVar('fill-color', 'menu-dark'),
     'hover-bg-color': getCssVar('color-primary'),
-    'item-height': 44px,
+    'item-height': 56px,
     'sub-item-height': calc(#{getCssVar('menu-item-height')} - 6px),
-    'horizontal-height': 44px,
+    'horizontal-height': 56px,
     'horizontal-sub-item-height': 36px,
-    'item-font-size': getCssVar('font-size-medium'),
+    'item-font-size': getCssVar('font-size-base'),
     'item-hover-fill': getCssVar('color-primary-light-9'),
     'border-color': getCssVar('border-color'),
     'base-level-padding': 10px,
@@ -1190,7 +1190,7 @@ $timeline: map.merge(
   (
     'node-size-normal': 12px,
     'node-size-large': 14px,
-    'node-color': getCssVar('border-color-light'),
+    'node-color': getCssVar('fill-color-darker'),
   ),
   $timeline
 );

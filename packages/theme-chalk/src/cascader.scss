@@ -48,7 +48,9 @@
   &:not(.is-disabled):hover {
     .#{$namespace}-input__wrapper {
       cursor: pointer;
-      box-shadow: 0 0 0 1px getCssVar('input', 'hover-border-color') inset;
+    //   box-shadow: 0 0 0 1px getCssVar('input', 'hover-border-color') inset;
+        border-color: var(--el-color-primary);
+        box-shadow: var(--el-box-shadow-input-hover)
     }
   }
 
@@ -89,12 +91,14 @@
 
     @include when(focus) {
       .#{$namespace}-input__wrapper {
-        box-shadow: 0 0 0 1px
-          var(
-            #{getCssVarName('input', 'focus-border-color')},
-            map.get($input, 'focus-border-color')
-          )
-          inset;
+        // box-shadow: 0 0 0 1px
+        //   var(
+        //     #{getCssVarName('input', 'focus-border-color')},
+        //     map.get($input, 'focus-border-color')
+        //   )
+        //   inset;
+        border-color: var(--el-color-primary);
+        box-shadow: var(--el-box-shadow-input-hover)
       }
     }
   }

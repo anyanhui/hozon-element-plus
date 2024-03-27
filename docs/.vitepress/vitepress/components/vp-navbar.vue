@@ -42,7 +42,7 @@ const currentLink = computed(() => {
         <VPNavbarSearch class="search" :options="theme.agolia" multilang />
         <VPNavbarMenu class="menu" />
         <VPNavbarThemeToggler class="theme-toggler" />
-        <!-- <VPNavbarTranslation class="translation" /> -->
+        <VPNavbarTranslation class="translation" />
         <!-- <VPNavbarSocialLinks class="social-links" /> -->
         <VPNavbarHamburger
           :active="fullScreen"

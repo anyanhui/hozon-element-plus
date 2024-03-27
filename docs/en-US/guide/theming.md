@@ -5,7 +5,7 @@ lang: en-US
 
 # Custom theme
 
-Element Plus uses BEM-styled CSS so that you can override styles easily. But if
+Hozon Element Plus uses BEM-styled CSS so that you can override styles easily. But if
 you need to replace styles at a large scale, e.g. change the theme color from
 blue to orange or green, maybe overriding them one by one is not a good idea.
 
@@ -68,7 +68,7 @@ $colors: map.deep-merge(
 
 ### How to override it?
 
-If your project also uses SCSS, you can directly change Element Plus style variables. Create a new style file, e.g. `styles/element/index.scss`:
+If your project also uses SCSS, you can directly change Hozon Element Plus style variables. Create a new style file, e.g. `styles/element/index.scss`:
 
 :::warning
 
@@ -83,7 +83,7 @@ Because the sass team said they will remove `@import` eventually.
 ```scss
 // styles/element/index.scss
 /* just override what you need */
-@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+@forward 'hozon-element-plus/theme-chalk/src/common/var.scss' with (
   $colors: (
     'primary': (
       'base': green,
@@ -100,27 +100,27 @@ Then in the entry file of your project, import this style file instead of Elemen
 
 :::tip
 
-Import `element/index.scss` before scss of element-plus to avoid the problem of sass mixed variables, because we need generate light-x by your custom variables.
+Import `element/index.scss` before scss of hozon-element-plus to avoid the problem of sass mixed variables, because we need generate light-x by your custom variables.
 
 :::
 
-Create a `element/index.scss` to combine your variables and variables of element-plus. (If you import them in ts, they will not be combined.)
+Create a `element/index.scss` to combine your variables and variables of hozon-element-plus. (If you import them in ts, they will not be combined.)
 
 :::tip
 
 In addition, you should distinguish your scss from the element variable scss.
-If they are mixed together, each hot update of `element-plus` needs to compile a large number of scss files, resulting in slow speed.
+If they are mixed together, each hot update of `hozon-element-plus` needs to compile a large number of scss files, resulting in slow speed.
 
 :::
 
 ```ts
 import { createApp } from 'vue'
 import './styles/element/index.scss'
-import ElementPlus from 'element-plus'
+import Hozon from 'hozon-element-plus'
 import App from './App.vue'
 
 const app = createApp(App)
-app.use(ElementPlus)
+app.use(HozonElementPlus)
 ```
 
 If you are using vite, and you want to custom theme when importing on demand.

@@ -7,6 +7,9 @@
 @include b(autocomplete) {
   position: relative;
   display: inline-block;
+  .#{$namespace}-input {
+    display: flex;
+  }
 
   @include e(popper) {
     @include picker-popper(
